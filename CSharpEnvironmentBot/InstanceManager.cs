@@ -286,9 +286,12 @@ namespace CSharpEnvironmentBot
         {
             private static readonly string[] _redefinitions = new string[]
             {
-                "#r \"nuget: System.Drawing.Common, 5.0.2\"", // Install nuget package to use Bitmaps etc
-                "public class Process { }", // Prohibits Process()
-                "public static class Diagnostics { public class Process { } }", // Prohibits Diagnostics.Process
+                // Install nuget package to use Bitmaps etc
+                "#r \"nuget: System.Drawing.Common, 5.0.2\"", 
+                // Prohibits Process()
+                "public class Process { }",
+                // Prohibits Diagnostics.Process
+                "public static class Diagnostics { public class Process { } }",
                 // Static class to replace Console
                 @"public static class DiscordIO
 {
